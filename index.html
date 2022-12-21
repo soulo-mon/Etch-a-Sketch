@@ -13,21 +13,28 @@
     <title>ETCH-a-SKETCH</title>
 </head>
 <body>
-    <div class="container"></div>
-    <div class="title"><h1>Etch-a-Sketch</h1></div>
-    <div class="mode">Mode: Coloring</div>
-    <div class="content">
-        <div class="board"></div>
-    </div>
-    <div class="button">
-        <button onclick="changeColor('black')">Color Mode</button>
-        <button onclick="changeColor('random')">Rainbow Mode</button>
-        <button onclick="changeColor('white')">Eraser</button>
-        <button onclick="resetBoard()">Clear</button>
-    </div>
-    <p class="rangeValue">16 x 16</p>
-    <div>
-        <input type="range" min= "1" max="60" value="16" name="slider" id="myRange" onchange="changeSize(this.value)" oninput="rangeValue.innerText = this.value">
+    <header>Etch-a-Sketch</header>
+    <!-- <h5 class="mode">Mode: Coloring</h5> -->
+    <div class="container">
+        <div class="grid-wrapper">
+                <div class="board"></div>
+        </div>
+        
+        <div class="main">
+            <div class="main-container">
+                <div class="button">
+                    <button id="color-mode" onclick="changeColor('black')">Color Mode</button>
+                    <button id="rainbow-mode" onclick="changeColor('random')">Rainbow Mode</button>
+                    <button id="eraser" onclick="changeColor('white')">Eraser</button>
+                    <button id="clear" onclick="resetBoard()">Clear</button>
+                </div>
+                <p class="grid-size">Grid Size: 24 x 24</p>
+                <div class="slider-boxs">
+                    <input type="range" min= "1" max="60" value="24" name="slider" id="myRange" onchange="changeSize(this.value)">
+                </div>
+            </div>
+
+        </div>    
     </div>
     
 </body>

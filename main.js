@@ -1,6 +1,7 @@
 let color = "black";
 let click = true;
 
+
 function populateBoard(size){
     
     let board = document.querySelector(".board");
@@ -26,7 +27,7 @@ function changeSize(input){
     let range = document.querySelector('input[type=range]');
     let values = document.querySelector('p');
     range.addEventListener('input', function(){
-        values.textContent = `${range.value} x ${range.value}`
+        values.textContent = `Grid Size: ${range.value} x ${range.value}`
     })
 }
 
@@ -49,14 +50,3 @@ function resetBoard(){
     let squares = board.querySelectorAll("div");
     squares.forEach((div) => div.style.backgroundColor = "white");
 }
-
-document.querySelector('body').addEventListener('click', (e) =>{
-    if(e.target.tagname != 'BUTTON'){
-        click = !click;
-        if (click){
-            document.querySelector(".mode").textContent = "Mode: Coloring";
-        } else{
-            document.querySelector(".mode").textContent ="Mode: Not Coloring"
-        }
-    }
-})
